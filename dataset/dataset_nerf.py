@@ -44,6 +44,7 @@ class DatasetNERF(Dataset):
         self.n_images = len(self.cfg['frames'])
 
         # Determine resolution & aspect ratio
+        print('image path', os.path.join(self.base_dir, self.cfg['frames'][0]['file_path']))
         self.resolution = _load_img(os.path.join(self.base_dir, self.cfg['frames'][0]['file_path'])).shape[0:2]
         self.aspect = self.resolution[1] / self.resolution[0]
 
